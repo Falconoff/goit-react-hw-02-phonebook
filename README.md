@@ -3,4 +3,5 @@
 <!--
 add create-react-app .
 add prettier and eslint
+npx mrm@2 lint-staged
 -->
