@@ -1,12 +1,24 @@
 import { Component } from 'react';
 
-import Section from '../Section/Section';
-import Statistics from '../Statistics/Statistics';
-import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
-import Notification from '../Notification/Notification';
+// import Section from '../Section/Section';
+// import Statistics from '../Statistics/Statistics';
+// import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
+// import Notification from '../Notification/Notification';
+import Inputs from '../Inputs/Inputs';
 
 import './App.module.scss';
-
+// =========== Phones =================
+class App extends Component {
+  state = {
+    contacts: [],
+    name: '',
+  };
+  render() {
+    return <Inputs />;
+  }
+}
+// ============================= for Feedbacks =============================
+/*
 class App extends Component {
   state = {
     good: 0,
@@ -64,5 +76,5 @@ class App extends Component {
     );
   }
 }
-
+*/
 export default App;
