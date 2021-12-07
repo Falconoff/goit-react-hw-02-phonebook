@@ -2,4 +2,5 @@
 
 <!--
 add create-react-app .
+add prettier and eslint
 -->
