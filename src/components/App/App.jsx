@@ -19,7 +19,7 @@ class App extends Component {
   };
 
   formSubmitHandler = data => {
-    const newData = { id: nanoid(5), ...data };
+    // checking name for matches
     const findName = this.state.contacts.find(
       contact => contact.name === data.name,
     );
@@ -28,6 +28,8 @@ class App extends Component {
       return;
     }
 
+    // add new contact
+    const newData = { id: nanoid(5), ...data };
     this.setState(prevState => {
       return {
         contacts: [...prevState.contacts, newData],
