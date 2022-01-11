@@ -1,3 +1,12 @@
+## GoIT React Homework-02: Phonebook
+
+Stylization by `CSS-in-JS`:
+[styled-components](https://styled-components.com/docs/basics#coming-from-css)
+
+[This project live page on GH-Pages](https://falconoff.github.io/goit-react-hw-02-phonebook/).
+
+#
+
 # Getting Started with Create React App
 
 This project was bootstrapped with
