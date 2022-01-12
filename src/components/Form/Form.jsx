@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import s from './Form.module.scss';
+import { FormTag, InputField, FormBtn } from './Form.styled';
 
 export default class Form extends Component {
   state = {
@@ -24,13 +24,12 @@ export default class Form extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit} className={s.form}>
+      <FormTag onSubmit={this.handleSubmit}>
         <label>
           <p>Name</p>
-          <input
+          <InputField
             type="text"
             name="name"
-            className={s.input}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
             value={this.state.name}
@@ -40,10 +39,9 @@ export default class Form extends Component {
         </label>
         <label>
           <p>Number</p>
-          <input
+          <InputField
             type="tel"
             name="number"
-            className={s.input}
             pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
             title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
             value={this.state.number}
@@ -52,11 +50,9 @@ export default class Form extends Component {
           />
         </label>
         <p>
-          <button type="submit" className={s.btn}>
-            Add contact
-          </button>
+          <FormBtn type="submit">Add contact</FormBtn>
         </p>
-      </form>
+      </FormTag>
     );
   }
 }

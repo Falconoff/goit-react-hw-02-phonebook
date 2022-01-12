@@ -1,11 +1,11 @@
 import { Component } from 'react';
 import { nanoid } from 'nanoid';
 
-import Form from '../Form/Form';
-import Contacts from '../Contacts/Contacts';
-import Filter from '../Filter/Filter';
+import Form from '../Form';
+import Contacts from '../Contacts';
+import Filter from '../Filter';
 
-import s from './App.module.scss';
+import { Container, TitleMain, TitleSecond } from './App.styled';
 
 class App extends Component {
   state = {
@@ -55,13 +55,13 @@ class App extends Component {
     );
 
     return (
-      <main>
-        <h1 className={s.title}>Phonebook</h1>
+      <Container>
+        <TitleMain>Phonebook</TitleMain>
         <Form onSubmit={this.formSubmitHandler} />
-        <h2 className={s.title}>Contacts</h2>
+        <TitleSecond>Contacts</TitleSecond>
         <Filter value={this.state.filter} onChange={this.changeFilter} />
         <Contacts arr={filteredContacts} onDelContact={this.deleteContact} />
-      </main>
+      </Container>
     );
   }
 }

@@ -1,16 +1,18 @@
-.form {
+import styled from 'styled-components';
+
+export const FormTag = styled.form`
   border: 2px solid #999;
   border-radius: 5px;
   margin-bottom: 30px;
   padding: 10px;
-}
+`;
 
-.input {
+export const InputField = styled.input`
   width: 300px;
   margin-bottom: 10px;
-}
+`;
 
-.btn {
+export const FormBtn = styled.button`
   width: 200px;
   height: 30px;
   margin-top: 20px;
@@ -22,4 +24,4 @@
   &:hover {
     background-color: #eee;
   }
-}
+`;

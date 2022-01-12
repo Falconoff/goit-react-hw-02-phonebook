@@ -1,21 +1,24 @@
 import PropTypes from 'prop-types';
-import s from './Contacts.module.scss';
+import {
+  ContactsList,
+  ContactsListItem,
+  UserName,
+  DeleteBtn,
+} from './Contacts.styled';
 
 export default function Contacts({ arr, onDelContact }) {
   return (
-    <ul className={s.list}>
+    <ContactsList>
       {arr.map(({ name, number, id }) => (
-        <li className={s.list__item} key={id}>
+        <ContactsListItem key={id}>
           <p>
-            <span className={s.name}>{name}: </span>
-            <span className={s.number}>{number}</span>
+            <UserName>{name}: </UserName>
+            {number}
           </p>
-          <button className={s.btn} onClick={() => onDelContact(id)}>
-            delete
-          </button>
-        </li>
+          <DeleteBtn onClick={() => onDelContact(id)}>delete</DeleteBtn>
+        </ContactsListItem>
       ))}
-    </ul>
+    </ContactsList>
   );
 }
 

@@ -1,11 +1,9 @@
-import s from './Filter.module.scss';
+import { FilterInput } from './Filter.styled.jsx';
 
 const Filter = ({ value, onChange }) => (
-  <div className={s.filter}>
-    <label>
-      <p className={s.text}>Find contacts by name</p>
-      <input type="text" name="" id="" value={value} onChange={onChange} />
-    </label>
-  </div>
+  <FilterInput>
+    <p>Find contacts by name</p>
+    <input type="text" value={value} onChange={onChange} />
+  </FilterInput>
 );
 export default Filter;
