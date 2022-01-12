@@ -20,10 +20,13 @@ class App extends Component {
 
   formSubmitHandler = data => {
     // checking name for matches
-    const findName = this.state.contacts.find(
-      contact => contact.name === data.name,
+    const { contacts } = this.state;
+    const normalizedName = data.name.toLowerCase();
+    const isFoundName = contacts.some(
+      contact => contact.name.toLowerCase() === normalizedName,
     );
-    if (findName) {
+
+    if (isFoundName) {
       alert(`${data.name} is already in contacts.`);
       return;
     }
@@ -49,8 +52,9 @@ class App extends Component {
 
   render() {
     // for filter
-    const normalizedFilter = this.state.filter.toLowerCase();
-    const filteredContacts = this.state.contacts.filter(contact =>
+    const { filter, contacts } = this.state;
+    const normalizedFilter = filter.toLowerCase();
+    const filteredContacts = contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalizedFilter),
     );
 
@@ -59,7 +63,7 @@ class App extends Component {
         <TitleMain>Phonebook</TitleMain>
         <Form onSubmit={this.formSubmitHandler} />
         <TitleSecond>Contacts</TitleSecond>
-        <Filter value={this.state.filter} onChange={this.changeFilter} />
+        <Filter value={filter} onChange={this.changeFilter} />
         <Contacts arr={filteredContacts} onDelContact={this.deleteContact} />
       </Container>
     );
